@@ -18,7 +18,7 @@ import { ButtonModule } from 'primeng/button';
 
 
 const rotas: Routes = [
-  {path: '', redirectTo:'produto', pathMatch:'full'},
+  {path: '', redirectTo:'insumo', pathMatch:'full'},
   {path: 'produto', component: ProdutoCadastroComponent},
   {path: 'insumo', component: InsumoPesquisaComponent},
 ];
@@ -37,7 +37,6 @@ const rotas: Routes = [
     AppRoutingModule,
     InsumoModule,
     ProdutoModule
-
   ],
   providers: [ConfirmationService],
   bootstrap: [
