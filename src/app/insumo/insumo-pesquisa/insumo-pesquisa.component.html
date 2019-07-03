@@ -1,6 +1,20 @@
 <p-toast [style]="{marginTop: '80px'}"></p-toast>
 <p-confirmDialog header="Confirmação" icon="pi pi-question-circle" acceptLabel="Sim" rejectLabel="Não"></p-confirmDialog>
 <div class="container">
+<!--<form autocomplete="off" (ngSubmit)="pesquisar()">
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <h1>Insumo</h1>
+      </div>
+      <div class="ui-g-12 ui-fluid">
+          <label>Nome</label>
+          <input pInputText type="text" name="nome" [(ngModel)]="nomeBusca">
+      </div>
+      <div class="ui-g-12">
+          <button pButton type="submit" label="Pesquisar"></button>
+      </div>
+    </div>
+  </form>-->
   <div class="ui-g">
     <div class="ui-g-12">
       <p-table [value]="insumo" [paginator]=true [rows]="6" [responsive]="true">
@@ -14,11 +28,11 @@
         </ng-template>
         <ng-template pTemplate="body" let-in>
           <tr>
-            <td class="col-id"><!--{{est.id}}--></td>
-            <td><!--{{in.nome}}--></td>
-            <td>{{<!--in.quantidade}}--></td>
+            <td class="col-id">{{in.id}}</td>
+            <td>{{in.nome}}</td>
+            <td>{{in.quantidade}}</td>
             <td class="col-acoes">
-              <!--<button pButton icon="pi pi-pencil" tooltipPosition="left" class="ui-button-info" pTooltip="Editar" showDelay="1000" type="button" [routerLink]="['/insumo', in.id]"></button>-->
+              <button pButton icon="pi pi-pencil" tooltipPosition="left" class="ui-button-info" pTooltip="Editar" showDelay="1000" type="button" [routerLink]="['/insumo', in.id]"></button>
             </td>
             <td class="col-acoes">
               <button pButton icon="pi pi-trash" tooltipPosition="right" class="ui-button-danger" pTooltip="Excluir" showDelay="1000" type="button" (click)="confirmarExclusao(in)"></button>

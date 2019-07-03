@@ -1,5 +1,5 @@
 <p-sidebar [(visible)]="sideBar">
-  <div class="ui-g">
+  <div class="p-grid ui-g">
     <div class="ui-g-12 ui-fluid">
       <h1 class="boxButton">Menu</h1>
       <button type="button" (click)="sideBar = false" pButton label="Produto" routerLink="/produto" class="boxButton"></button>
@@ -7,6 +7,5 @@
     </div>
   </div>
 </p-sidebar>
-<button type="button" (click)="sideBar = true"
-pButton icon="pi pi-bars" class="boxButton"></button>
+<button type="button" (click)="sideBar = true" pButton icon="pi pi-bars" class="boxButton"></button>
 <router-outlet></router-outlet>

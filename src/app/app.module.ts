@@ -1,7 +1,6 @@
-import { InsumoPesquisaComponent } from './insumo/insumo-pesquisa/insumo-pesquisa.component';
+import { InsumoCadastroComponent } from './insumo/insumo-cadastro/insumo-cadastro.component';
 import { InsumoModule } from './insumo/insumo.module';
-import { ProdutoModule } from './produto/produto.module';
-import { ProdutoCadastroComponent } from './produto/produto-cadastro/produto-cadastro.component';
+import { InsumoPesquisaComponent } from './insumo/insumo-pesquisa/insumo-pesquisa.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,18 +13,19 @@ import { ConfirmationService } from 'primeng/api';
 import {Routes, RouterModule} from '@angular/router';
 import {SidebarModule} from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
-
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 
 const rotas: Routes = [
   {path: '', redirectTo:'insumo', pathMatch:'full'},
-  {path: 'produto', component: ProdutoCadastroComponent},
   {path: 'insumo', component: InsumoPesquisaComponent},
+  {path: 'insumo/novo', component: InsumoCadastroComponent},
+  {path: 'insumo/:id', component: InsumoCadastroComponent},
 ];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,11 +36,10 @@ const rotas: Routes = [
     ButtonModule,
     AppRoutingModule,
     InsumoModule,
-    ProdutoModule
+    NgbModule,
+    NgbAlertModule
   ],
   providers: [ConfirmationService],
-  bootstrap: [
-    AppComponent
-  ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
